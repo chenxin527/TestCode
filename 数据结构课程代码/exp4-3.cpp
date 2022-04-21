@@ -7,11 +7,11 @@ typedef struct
     int length;
 }SqString;
 
-int Index(SqString s,SqString t); //¼òµ¥Æ¥ÅäËã·¨
-void GetNext(SqString t,int next[]); //ÓÉÄ£Ê½´® t Çó³ö next ´®
-int KMPIndex(SqString s,SqString t); //KMP Ëã·¨
-void GetNextval(SqString t,int nextval[]); //ÓÉÄ£Ê½´® t Çó³ö nextval Öµ
-int KMPIndex1(SqString s,SqString t); //ĞŞÕıµÄ KMP Ëã·¨
+int Index(SqString s,SqString t); //ç®€å•åŒ¹é…ç®—æ³•
+void GetNext(SqString t,int next[]); //ç”±æ¨¡å¼ä¸² t æ±‚å‡º next ä¸²
+int KMPIndex(SqString s,SqString t); //KMP ç®—æ³•
+void GetNextval(SqString t,int nextval[]); //ç”±æ¨¡å¼ä¸² t æ±‚å‡º nextval å€¼
+int KMPIndex1(SqString s,SqString t); //ä¿®æ­£çš„ KMP ç®—æ³•
 void StrAssign(SqString &s,char cstr[]);
 void DestroyStr(SqString &s);
 void DispStr(SqString s);
@@ -24,12 +24,12 @@ int main(void)
 
     StrAssign(s,"abcabcdabcdeabcdefabcdefg");
     StrAssign(t,"abcdeabcdefab");
-    printf("´® s: ");
+    printf("ä¸² s: ");
     DispStr(s);
-    printf("´® t:");
+    printf("ä¸² t:");
     DispStr(t);
-    printf("\n¼òµ¥Æ¥ÅäËã·¨:\n");
-    printf("\tt ÔÚ s ÖĞµÄÎ»ÖÃ = %d\n",Index(s,t));
+    printf("\nç®€å•åŒ¹é…ç®—æ³•:\n");
+    printf("\tt åœ¨ s ä¸­çš„ä½ç½® = %d\n",Index(s,t));
     GetNext(t,next);
     GetNextval(t,nextval);
     printf("       j");
@@ -48,10 +48,10 @@ int main(void)
     for(j = 0;j < t.length;j++)
         printf("%4d",nextval[j]);
     printf("\n");
-    printf("\nKMP Ëã·¨:\n");
-    printf("\tt ÔÚ s ÖĞµÄÎ»ÖÃ = %d\n",KMPIndex(s,t));
-    printf("\n¸Ä½øµÄ KMP Ëã·¨:\n");
-    printf("\tt ÔÚ s ÖĞµÄÎ»ÖÃ = %d\n",KMPIndex1(s,t));
+    printf("\nKMP ç®—æ³•:\n");
+    printf("\tt åœ¨ s ä¸­çš„ä½ç½® = %d\n",KMPIndex(s,t));
+    printf("\næ”¹è¿›çš„ KMP ç®—æ³•:\n");
+    printf("\tt åœ¨ s ä¸­çš„ä½ç½® = %d\n",KMPIndex1(s,t));
     DestroyStr(s);
     DestroyStr(t);
 
