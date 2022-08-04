@@ -15,10 +15,17 @@ void prefix() {
 }
 
 int execute(char* buffer) {
-    //判断要执行什么命令（包括内置命令和外部命令）
 	if (buffer == NULL) {
 		return 1;
 	}
+	
+
+
+
+
+
+
+	//判断要执行什么命令（包括内置命令和外部命令）
 	//进入某个目录
 	if(strncmp(buffer, "cd ", 3) == 0) {
         int flag;
